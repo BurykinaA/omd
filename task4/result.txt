@@ -1,0 +1,140 @@
+------------encode-------------
+PS D:\AAAavito\omd\task4> python -m doctest -v test_morse_encode.py 
+1 items had no tests:
+    test_morse_encode
+0 tests in 1 items.
+0 passed and 0 failed.
+Test passed.
+PS D:\AAAavito\omd\task4> python -m doctest -v morse.py
+Trying:
+    encode("MAI-PYTHON-2019")  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- .---- ----.'
+ok
+Trying:
+    encode("HELLO")  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '.... . .-.. .-.. ---'
+ok
+Trying:
+    encode("SOS")  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode("1234567890")  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----'
+ok
+Trying:
+    encode(", .?/-()")  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '--..-- .-.-.- ..--.. -..-. -....- -.--. -.--.-'
+**********************************************************************
+File "D:\AAAavito\omd\task4\morse.py", line 69, in morse.encode
+Failed example:
+    encode(", .?/-()")  # doctest: +NORMALIZE_WHITESPACE
+Exception raised:
+    Traceback (most recent call last):
+      File "D:\Anaconda\lib\doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest morse.encode[4]>", line 1, in <module>
+        encode(", .?/-()")  # doctest: +NORMALIZE_WHITESPACE
+      File "D:\AAAavito\omd\task4\morse.py", line 75, in encode
+        encoded_signs = [LETTER_TO_MORSE[letter] for letter in message]
+      File "D:\AAAavito\omd\task4\morse.py", line 75, in <listcomp>
+        encoded_signs = [LETTER_TO_MORSE[letter] for letter in message]
+    KeyError: ','
+Trying:
+    encode("SOS")  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+Expecting:
+    '.........'
+ok
+2 items had no tests:
+    morse
+    morse.decode
+**********************************************************************
+1 items had failures:
+   1 of   6 in morse.encode
+6 tests in 3 items.
+5 passed and 1 failed.
+***Test Failed*** 1 failures.
+-------------------------------------------------
+
+
+
+
+
+
+
+
+-------------decode-------------------------
+PS D:\AAAavito\omd\task4> pytest test_morse.py
+>>
+============================================================== test session starts =============================================================== 
+platform win32 -- Python 3.10.9, pytest-7.1.2, pluggy-1.0.0
+rootdir: D:\AAAavito\omd\task4
+plugins: anyio-3.5.0
+collected 0 items                                                                                                                                  
+
+============================================================= no tests ran in 0.03s ============================================================== 
+ERROR: file or directory not found: test_morse.py
+
+PS D:\AAAavito\omd\task4> pytest test_morse_decode.py
+>>
+============================================================== test session starts ===============================================================
+platform win32 -- Python 3.10.9, pytest-7.1.2, pluggy-1.0.0
+rootdir: D:\AAAavito\omd\task4
+plugins: anyio-3.5.0
+collected 3 items
+
+test_morse_decode.py ...                                                                                                                    [100%] 
+
+=============================================================== 3 passed in 0.03s ================================================================ 
+-------------------------------------
+
+
+
+
+
+
+
+-------fit_transform------------
+PS D:\AAAavito\omd\task4> python test_fit_transform.py  
+....
+----------------------------------------------------------------------Ran 4 tests in 0.001s
+
+OK
+-------------
+
+
+
+---------fit_transform2----------
+PS D:\AAAavito\omd\task4> python test_fit_transform.py
+....
+----------------------------------------------------------------------Ran 4 tests in 0.001s
+
+OK
+PS D:\AAAavito\omd\task4> pytest test_fit_transform2.py
+======================== test session starts ========================
+platform win32 -- Python 3.10.9, pytest-7.1.2, pluggy-1.0.0
+rootdir: D:\AAAavito\omd\task4
+plugins: anyio-3.5.0
+collected 4 items
+
+test_fit_transform2.py ....                                    [100%] 
+
+========================= 4 passed in 0.04s ========================= 
+------------------
+
+
+
+
+
+
+
+
+
+
+
+
